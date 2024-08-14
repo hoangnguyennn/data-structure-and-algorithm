@@ -74,7 +74,9 @@ class Nodee {
 }
 
 /**
- * Triển khai ngăn xếp bằng linked list
+ * Triển khai ngăn xếp bằng danh sách liên kết
+ *
+ * Trong ngăn xếp, cần xác định vị trí của node trên cùng để có thể thêm vào hoặc lấy ra
  */
 class LinkedListStack {
   /** Node trên cùng của ngăn xếp */
@@ -83,13 +85,13 @@ class LinkedListStack {
   #size = 0;
 
   /**
-   * Thêm 1 item lên trên cùng của ngăn xếp
+   * Thêm 1 node lên trên cùng của ngăn xếp
    * @param {*} value
    */
   push(value) {
     const newNode = new Nodee(value);
 
-    /** đặt node mới nhất lên trước #head */
+    /** đặt node mới nhất lên trước trên cùng */
     if (this.#head) {
       newNode.next = this.#head;
     }
@@ -102,7 +104,7 @@ class LinkedListStack {
   }
 
   /**
-   * Lấy ra item trên cùng của ngăn xếp
+   * Lấy ra giá trị của node trên cùng của ngăn xếp
    * @returns
    */
   pop() {
@@ -138,7 +140,7 @@ class LinkedListStack {
   }
 
   /**
-   * Xóa các item trong ngăn xếp
+   * Xóa các node trong ngăn xếp
    */
   clear() {
     this.#head = null;

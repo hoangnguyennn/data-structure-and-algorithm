@@ -9,6 +9,9 @@ class Nodee {
  * Tương tự ngăn xếp
  * Do triển khai bằng Array khá đơn giản
  * nên mình sẽ chỉ triển khai bằng danh sách liên kết
+ *
+ * Trong hàng đợi, cần xác định vị trí node đầu hàng để lấy ra
+ * và vị trí node cuối hàng để thêm vào
  */
 class Queue {
   /** Node đầu tiên hàng đợi */
@@ -19,7 +22,7 @@ class Queue {
   #size = 0;
 
   /**
-   * Thêm 1 item vào hàng đợi
+   * Thêm 1 node vào hàng đợi
    * @param {*} value
    */
   enqueue(value) {

@@ -1,3 +1,8 @@
+/**
+ * Một node trong cây nhị phân có tối đa 2 node con
+ * Node bên trái có giá trị nhỏ hơn node cha
+ * Node bên phải có giá trị lớn hơn node cha
+ */
 class TreeNode {
   constructor(value) {
     /** giá trị của node */
@@ -9,23 +14,26 @@ class TreeNode {
   }
 }
 
+/**
+ * Trong cây nhị phân, cần xác định node gốc của cây
+ */
 class BinaryTree {
   constructor() {
     /** node gốc */
     this.root = null;
   }
 
-  /** chèn 1 node vào cây */
+  /** thêm 1 node vào cây */
   insert(value) {
     const newNode = new TreeNode(value);
 
-    /** nếu cây chưa có node gốc, thì node gốc sẽ là giá trị vừa thêm vào */
+    /** nếu cây chưa có node gốc, thì node gốc sẽ là node vừa thêm vào */
     if (!this.root) {
       this.root = newNode;
       return;
     }
 
-    /** chèn 1 node vào bên dưới node gốc */
+    /** nếu đã có node gốc, chèn node vào bên dưới node gốc */
     this.insertNode(this.root, newNode);
   }
 

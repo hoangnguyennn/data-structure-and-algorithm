@@ -10,7 +10,7 @@ class LinkedList {
   #head = null;
 
   /**
-   * Thêm một item vào list
+   * Thêm một node vào danh sách
    *
    * @param {*} value
    * @returns
@@ -26,7 +26,7 @@ class LinkedList {
 
     let current = this.#head;
     while (current.next) {
-      /** di chuyển từng node một tới node cuối cùng */
+      /** di chuyển tới node cuối cùng */
       current = current.next;
     }
 
@@ -35,9 +35,9 @@ class LinkedList {
   }
 
   /**
-   * Lấy ra value của item tại index cụ thể
+   * Lấy ra giá trị tại node cụ thể theo index
    *
-   * @param {*} index
+   * @param {number} index
    * @returns
    */
   getNode(index) {
